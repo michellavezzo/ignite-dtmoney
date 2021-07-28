@@ -3,9 +3,10 @@ import Modal from "react-modal";
 
 import { Dashboard } from "./Components/Dashboard";
 import { Header } from "./Components/Header";
+import { NewTransactionModal } from "./Components/NewTransactionModal";
 import { GlobalStyle } from "./styles/global";
 
-Modal.setAppElement("root"); //questão de acessibilidade para dar o "foco" no mdal
+Modal.setAppElement("#root"); //questão de acessibilidade para dar o "foco" no mdal
 
 export function App() {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] =
@@ -22,14 +23,10 @@ export function App() {
     <>
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
-
-      <Modal
+      <NewTransactionModal
         isOpen={isNewTransactionModalOpen}
         onRequestClose={handleCloseNewTransactionModal}
-      >
-        <h2>Cadastrar transação</h2>
-      </Modal>
-
+      />
       <GlobalStyle />
     </>
   );
