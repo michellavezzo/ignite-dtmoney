@@ -5,7 +5,7 @@ import { Dashboard } from "./Components/Dashboard";
 import { Header } from "./Components/Header";
 import { NewTransactionModal } from "./Components/NewTransactionModal";
 import { GlobalStyle } from "./styles/global";
-import { TransactionsProvider } from "./TransactionsContext";
+import { TransactionsProvider } from "./hooks/useTransactions";
 
 Modal.setAppElement("#root"); //questão de acessibilidade para dar o "foco" no mdal
 
